@@ -7,7 +7,7 @@ spec:
   selector:
     matchLabels:
       app: frankdev-nuxtjs
-  replicas: 1 # tells deployment to run 2 pods matching the template
+  replicas: 2 # tells deployment to run 2 pods matching the template
   template:
     metadata:
       labels:
@@ -19,8 +19,8 @@ spec:
       - name: frankdev-nuxtjs
         image: barrentix.azurecr.io/frankdev/website:develop-latest
         imagePullPolicy: IfNotPresent
-        command: ["/bin/sh", "-c"]
-        args: ["yarn run build && node /app/.output/server/index.mjs"]
+        #command: ["/bin/sh", "-c"]
+        #args: ["yarn run build && node /app/.output/server/index.mjs"]
         ports:
         - containerPort: 80
 
