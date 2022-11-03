@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frankdev-deployment
+  namespace: frankdev
+spec:
+  selector:
+    matchLabels:
+      app: frankdev-nuxtjs
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: frankdev-nuxtjs
+    spec:
+      imagePullSecrets:
+      - name: mysecret
+      containers:
+      - name: frankdev-nuxtjs
+        image: barrentix.azurecr.io/frankdev/website:develop-latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80

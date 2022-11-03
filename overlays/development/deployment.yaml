@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frankdev-deployment
+  namespace: frankdev-nuxtjs
+spec:
+  selector:
+    matchLabels:
+      app: frankdev-nuxtjs
+  replicas: 1 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: frankdev-nuxtjs
+    spec:
+      imagePullSecrets:
+      - name: mysecret
+      volumes: 
+        - name: arrifava-beach-stotage
+          persistentVolumeClaim:
+            claimName: arrifana-beach-pvc
+      containers:
+      - name: frankdev-nuxtjs
+        image: arrifanabeach.azurecr.io/frontend:nuxtjs-1.0.0
+        imagePullPolicy: IfNotPresent
+        command: ["/bin/sh", "-c"]
+        args: ["npm run build && npm start"]
+        ports:
+        - containerPort: 80
+        volumeMounts:
+          - mountPath: "/opt/hello"
+            name: arrifava-beach-stotage
+        envFrom:
+        - configMapRef:
+            name: env-configmap
+        - secretRef:
+            name: env-secrets
