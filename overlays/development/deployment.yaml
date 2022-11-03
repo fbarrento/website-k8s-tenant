@@ -17,7 +17,7 @@ spec:
       - name: mysecret
       containers:
       - name: frankdev-nuxtjs
-        iimage: barrentix.azurecr.io/frankdev/website:develop-latest
+        image: barrentix.azurecr.io/frankdev/website:develop-latest
         imagePullPolicy: IfNotPresent
         command: ["/bin/sh", "-c"]
         args: ["yarn run build && node /app/.output/server/index.mjs"]
