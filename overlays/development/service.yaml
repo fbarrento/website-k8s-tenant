@@ -6,9 +6,7 @@ metadata:
 spec:
   selector: 
     app: frankdev-nuxtjs
-  type: NodePort  
+  type: ClusterIP  
   ports:
-    - port: 80
-      nodePort: 80
-      targetPort: 80
-  internalTrafficPolicy: Local
+    - port: 3000
+      targetPort: 3000
