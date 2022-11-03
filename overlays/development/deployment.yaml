@@ -22,5 +22,5 @@ spec:
         command: ["/bin/sh", "-c"]
         args: ["node /app/.output/server/index.mjs"]
         ports:
-        - containerPort: 3000
+        - containerPort: 80
 
