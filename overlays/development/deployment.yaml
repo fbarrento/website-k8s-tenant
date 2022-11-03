@@ -17,10 +17,10 @@ spec:
       - name: mysecret
       containers:
       - name: frankdev-nuxtjs
-        image: arrifanabeach.azurecr.io/frontend:nuxtjs-1.0.0
+        iimage: barrentix.azurecr.io/frankdev/website:develop-latest
         imagePullPolicy: IfNotPresent
         command: ["/bin/sh", "-c"]
-        args: ["npm run build && npm start"]
+        args: ["yarn run build && node /app/.output/server/index.mjs"]
         ports:
         - containerPort: 80
 
