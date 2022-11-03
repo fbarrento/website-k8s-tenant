@@ -23,4 +23,5 @@ spec:
         args: ["node /app/.output/server/index.mjs"]
         ports:
         - containerPort: 3000
+          protocol: TCP
 
