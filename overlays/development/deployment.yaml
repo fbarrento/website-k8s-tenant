@@ -20,7 +20,7 @@ spec:
         image: barrentix.azurecr.io/frankdev/website:develop-latest
         imagePullPolicy: IfNotPresent
         command: ["/bin/sh", "-c"]
-        args: ["cd /app && yarn run build && node /app/.output/server/index.mjs"]
+        args: ["node /app/.output/server/index.mjs"]
         ports:
         - containerPort: 3000
 
