@@ -19,8 +19,8 @@ spec:
       - name: frankdev-nuxtjs
         image: barrentix.azurecr.io/frankdev/website:develop-latest
         imagePullPolicy: IfNotPresent
-        #command: ["/bin/sh", "-c"]
-        #args: ["yarn run build && node /app/.output/server/index.mjs"]
+        command: ["/bin/sh", "-c"]
+        args: ["yarn run build && node /app/.output/server/index.mjs"]
         ports:
         - containerPort: 3000
 
