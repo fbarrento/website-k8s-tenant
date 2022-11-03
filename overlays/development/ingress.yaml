@@ -6,7 +6,7 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
     kubernetes.io/ingress.allow-http: "true"
-    ingress.kubernetes.io/rewrite-target: /
+    #ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/ssl-redirect: false
     cert-manager.io/cluster-issuer: letsencript-production   
     
@@ -20,7 +20,7 @@ spec:
     - host: frankdev.k8s.dev.bdynamic.pt
       http:
         paths:
-          - path: ""
+          - path: /
             pathType: Prefix
             backend:
               service:
