@@ -8,6 +8,6 @@ spec:
     app: frankdev-nuxtjs
   type: ClusterIP  
   ports:
-    - port: 3000
+    - port: 3001
       targetPort: 3000
   internalTrafficPolicy: Local
