@@ -14,4 +14,14 @@ stages:
       displayName: "Say Hello"
       steps:
         - script: echo "Hello, mundo!"
+        - task: CopyFiles@2
+          inputs:
+            contents: 
+              base
+              overlays/development
+            targetFolder: $(Build.ArtifactStagingDirectory)
+        - task: PublishBuildArtifacts@1
+          inputs:
+            pathToPublish: $(Build.ArtifactStagingDirectory)
+            artifactName: MyBuildOutputs
 
