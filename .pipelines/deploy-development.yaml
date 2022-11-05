@@ -8,5 +8,14 @@ resources:
 pool:
   vmImage: ubuntu-20.04
 
-steps:
-- bash: echo "FrankieDev.io Development Deploy after Build Artifacts"
+stages:
+  - stage: Deploy
+    displayName: Deploy K8s Manifests to frankdev.io Development
+    jobs:
+    - deployment:
+      environment: dev-K8s-sfihelv-kubeserver-d001
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+            - bash: echo "FrankieDev.io Development Deploy after Build Artifacts"
