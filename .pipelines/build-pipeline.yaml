@@ -18,10 +18,11 @@ stages:
             ls -la
         - task: CopyFiles@2
           inputs:
-            contents: |
+            SourceFolder: $(Build.SourcesDirectory)
+            Contents: |
              "**/base/**"
              "**/overlays/development/**"
-            targetFolder: $(Build.ArtifactStagingDirectory)
+            TargetFolder: $(Build.ArtifactStagingDirectory)
         - task: PublishBuildArtifacts@1
           inputs:
             pathToPublish: $(Build.ArtifactStagingDirectory)
