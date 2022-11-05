@@ -20,8 +20,8 @@ spec:
         #image: barrentix.azurecr.io/frankdev/website:develop-latest
         image: nginx:latest
         imagePullPolicy: IfNotPresent
-        command: ["/bin/sh", "-c"]
-        args: ["node /app/.output/server/index.mjs"]
+        #command: ["/bin/sh", "-c"]
+        #args: ["node /app/.output/server/index.mjs"]
         ports:
         - containerPort: 3000
           protocol: TCP
