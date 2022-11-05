@@ -22,6 +22,7 @@ stages:
             
             - checkout: self
               persistCredentials: true
+              ref: cluster/development
 
             - bash: |
                 git checkout cluster/development
