@@ -20,7 +20,7 @@ stages:
           inputs:
             SourceFolder: $(Build.SourcesDirectory)
             Contents: |
-              **/*
+              ./base/*
               !.git/**/*
             TargetFolder: $(Build.ArtifactStagingDirectory)
         - task: PublishBuildArtifacts@1
