@@ -1,0 +1,12 @@
+resources:
+  pipelines:
+  - pipelines:
+    source: BuildFrankiedevK8sDevelopment
+    project: Infrastructure
+    trigger: true
+
+pool:
+  vmImage: ubuntu-20.04
+
+steps:
+- bash: echo "FrankieDev.io Development Deploy after Build Artifacts"
