@@ -4,6 +4,12 @@ resources:
     source: BuildFrankiedevK8sDevelopment
     project: Infrastructure
     trigger: true
+  repositories:
+  - repository: FrankiedevClusterDevelopmentBranch  # identifier (A-Z, a-z, 0-9, and underscore)
+    type: github  # see the following "Type" topic
+    name: fbarrento/website-k8s-tenant  # repository name (format depends on `type`)
+    ref: cluster/development  # ref name to use; defaults to 'refs/heads/main'
+    endpoint: fbarrento
 
 pool:
   vmImage: ubuntu-20.04
@@ -20,12 +26,10 @@ stages:
             steps:
             - bash: echo "FrankieDev.io Development Deploy after Build Artifacts"
             
-            - checkout: self
+            - checkout: FrankiedevClusterDevelopmentBranch
               persistCredentials: true
-              ref: cluster/development
 
             - bash: |
-                git checkout cluster/development
                 ls -la
               displayName: Checkout branch cluster/development
 
