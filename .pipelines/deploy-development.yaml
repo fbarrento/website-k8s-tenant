@@ -19,3 +19,9 @@ stages:
           deploy:
             steps:
             - bash: echo "FrankieDev.io Development Deploy after Build Artifacts"
+            
+            - checkout: self
+              persistCredentials: true
+
+            - bash: |
+                ls -la
