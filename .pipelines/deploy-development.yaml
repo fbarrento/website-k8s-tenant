@@ -1,6 +1,6 @@
 resources:
   pipelines:
-  - pipelines:
+  - pipeline:
     source: BuildFrankiedevK8sDevelopment
     project: Infrastructure
     trigger: true
