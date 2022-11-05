@@ -14,7 +14,7 @@ spec:
         app: frankdev-nuxtjs
     spec:
       imagePullSecrets:
-      - name: mysecret
+      - name: acr-secret
       containers:
       - name: frankdev-nuxtjs
         image: barrentix.azurecr.io/frankdev/website:develop-latest
