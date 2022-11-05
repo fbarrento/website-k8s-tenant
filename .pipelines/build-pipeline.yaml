@@ -7,10 +7,11 @@ pool:
   vmImage: ubuntu-20.04
 
 stages:
-  - stage: Publish Artifacts
+  - stage: PublishK8sManifests
+    displayName: Publish K8s Manifests
     jobs:
     - job: SayHello
       displayName: "Say Hello"
       steps:
         - script: echo "Hello, mundo!"
-        
+
