@@ -6,14 +6,12 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
     kubernetes.io/ingress.allow-http: "true"
+    kubernetes.io/ingress.client-max-body-size: "32M"
+    kubernetes.io/ingress.proxy-buffer-size: "32M"
     ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     cert-manager.io/cluster-issuer: letsencript-production   
 
-data:
-  client-max-body-size: "32M"
-  proxy-buffer-size: "32M"    
-   
 spec:
   tls:
   - hosts:
