@@ -24,4 +24,24 @@ stages:
               persistCredentials: true
 
             - bash: |
+                git checkout cluster/development
                 ls -la
+              displayName: Checkout branch cluster/development
+
+            - task: CopyFiles@2
+              inputs:
+                SourceFolder: $(Build.ArtifactStagingDirectory)
+                Contents: |
+                  base/**/*
+                  overlays/development/**/*
+                OverWrite: true
+                TargetFolder: $(Build.SourcesDirectory)
+
+            - bash: |
+                git add .
+                git commit -am"Deploying revision"
+                git push
+
+            
+
+
