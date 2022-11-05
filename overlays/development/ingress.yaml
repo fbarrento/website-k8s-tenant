@@ -9,7 +9,10 @@ metadata:
     ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     cert-manager.io/cluster-issuer: letsencript-production   
-    
+
+data:
+  client-max-body-size: "32M"
+  proxy-buffer-size: "32M"    
    
 spec:
   tls:
