@@ -1,7 +1,7 @@
 resources:
   pipelines:
-  - pipeline: BuildFrankiedevK8sDevelopment
-    source: DeployFrankiedevK8sDevelopment
+  - pipeline: DeployFrankiedevK8sDevelopment
+    source: BuildFrankiedevK8sDevelopment
     project: Infrastructure
     trigger: true
 
