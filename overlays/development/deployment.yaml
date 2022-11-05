@@ -17,8 +17,8 @@ spec:
       - name: mysecret
       containers:
       - name: frankdev-nuxtjs
-        #image: barrentix.azurecr.io/frankdev/website:develop-latest
-        image: nginx:latest
+        image: barrentix.azurecr.io/frankdev/website:develop-latest
+        #image: nginx:latest
         imagePullPolicy: IfNotPresent
         #command: ["/bin/sh", "-c"]
         #args: ["node /app/.output/server/index.mjs"]
