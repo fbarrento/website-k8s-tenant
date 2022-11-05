@@ -13,12 +13,14 @@ stages:
     - job: SayHello
       displayName: "Say Hello"
       steps:
-        - script: echo "Hello, mundo!"
+        - script: | 
+            echo "Hello, mundo!"
+            ls -la
         - task: CopyFiles@2
           inputs:
             contents: 
-              base
-              overlays/development
+              base/*
+              overlays/development/*
             targetFolder: $(Build.ArtifactStagingDirectory)
         - task: PublishBuildArtifacts@1
           inputs:
