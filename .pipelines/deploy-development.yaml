@@ -43,6 +43,8 @@ stages:
                 TargetFolder: $(Build.SourcesDirectory)
 
             - bash: |
+                git config --global user.email "francisco.barrento@gmail.com"
+                git config --global user.name "Azure Pipeline Agent"
                 git add .
                 git commit -am"Deploying revision"
                 git push
