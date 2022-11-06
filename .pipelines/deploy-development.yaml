@@ -36,7 +36,7 @@ stages:
 
             - task: CopyFiles@2
               inputs:
-                SourceFolder: $(Build.StagingDirectory)/MyBuildOutputs
+                SourceFolder: $(Pipeline.Workspace)/DeployFrankiedevK8sDevelopment/MyBuildOutputs
                 Contents: |
                   base/**/*
                   overlays/development/**/*
