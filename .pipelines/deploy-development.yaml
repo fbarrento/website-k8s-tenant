@@ -31,14 +31,15 @@ stages:
 
             - bash: |
                 ls -la
+                ls -la $(Build.ArtifactStagingDirectory)
               displayName: Checkout branch cluster/development
 
             - task: CopyFiles@2
               inputs:
                 SourceFolder: $(Build.ArtifactStagingDirectory)
                 Contents: |
-                  base/**/*
-                  overlays/development/**/*
+                  MyBuildOutputs/base/**/*
+                  MyBuildOutputs/overlays/development/**/*
                 OverWrite: true
                 TargetFolder: $(Build.SourcesDirectory)
 
