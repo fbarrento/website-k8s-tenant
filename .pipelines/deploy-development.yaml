@@ -36,10 +36,10 @@ stages:
 
             - task: CopyFiles@2
               inputs:
-                SourceFolder: $(Build.ArtifactStagingDirectory)
+                SourceFolder: $(Pipeline.Workspace)/MyBuildOutputs
                 Contents: |
-                  MyBuildOutputs/base/**/*
-                  MyBuildOutputs/overlays/development/**/*
+                  base/**/*
+                  overlays/development/**/*
                 OverWrite: true
                 TargetFolder: $(Build.SourcesDirectory)
 
