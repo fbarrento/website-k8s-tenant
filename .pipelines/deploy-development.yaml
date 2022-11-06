@@ -47,7 +47,7 @@ stages:
                 git config --global user.name "Azure Pipeline Agent"
                 git add .
                 git commit -am"Deploying revision"
-                git push
+                git push origin HEAD:cluster/development
 
             
 
