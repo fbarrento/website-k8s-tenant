@@ -45,7 +45,6 @@ stages:
 
             - bash: |
                 pwd
-                cat /overlays/development/ingress.yaml
                 git config --global user.email "francisco.barrento@gmail.com"
                 git config --global user.name "Azure Pipeline Agent"
                 git add .
