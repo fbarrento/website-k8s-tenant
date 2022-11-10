@@ -27,6 +27,10 @@ stages:
           deploy:
             steps:
             - bash: echo "FrankieDev.io Development Deploy after Build Artifacts"
+
+            - download: DeployFrankiedevK8sDevelopment
+              artifact: MyBuildOutputs
+
             
             - checkout: FrankiedevClusterDevelopmentBranch
               persistCredentials: true
