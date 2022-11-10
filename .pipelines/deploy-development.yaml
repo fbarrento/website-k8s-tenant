@@ -1,11 +1,11 @@
-trigger: none
-pr: none
 resources:
   pipelines:
   - pipeline: DeployFrankiedevK8sDevelopment
     source: BuildFrankiedevK8sDevelopment
     project: Infrastructure
-    trigger: true
+    trigger: 
+      branches:
+      - develop
   repositories:
   - repository: FrankiedevClusterDevelopmentBranch  # identifier (A-Z, a-z, 0-9, and underscore)
     type: github  # see the following "Type" topic

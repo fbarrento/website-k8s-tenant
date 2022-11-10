@@ -17,7 +17,7 @@ spec:
       - name: acr-secret
       containers:
       - name: frankdev-nuxtjs
-        image: barrentix.azurecr.io/frankdev/website:develop-3426130252
+        image: barrentix.azurecr.io/frankdev/website:develop-3439687987
         #image: nginx:latest
         imagePullPolicy: IfNotPresent
         #command: ["/bin/sh", "-c"]
