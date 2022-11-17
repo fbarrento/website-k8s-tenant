@@ -10,6 +10,8 @@ metadata:
     kubernetes.io/ingress.proxy-buffer-size: "32M"
     ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/ssl-passthrough: "false"
     cert-manager.io/cluster-issuer: letsencript-production   
 
 spec:
